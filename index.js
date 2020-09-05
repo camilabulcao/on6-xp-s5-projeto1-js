@@ -165,9 +165,6 @@ const hoje = new Date()
 console.log(hoje) // 2020-09-05T10:56:49.693Z
 
 
-
-
-
 // Vamos capturar os valores de dia, mes e ano da data de hoje pelos métodos de Date
 
 const dia = hoje.getDate()
@@ -181,7 +178,9 @@ console.log(dia, mes, ano) // 5 8 2020 🤔
 
 
 // Vamos criar uma data específica. Lembrando que mês de Janeiro é 0 no Javascript 🤷🏻‍♀️
+const nascimento = new Date(1992, 2, 5)
 
+console.log(`Nasci em ${nascimento}`)
 
 
 
@@ -242,6 +241,30 @@ console.log(pessoa.apresentacao())
 // Quero criar as variáveis pessoa2 e pessoa3 com as mesmas propriedades, mas alterando os valores de nome, sobrenome, altura e peso
 
 
+const pessoa2 = {
+  nome: 'Cintia',
+  sobrenome: 'Yamamoto',
+  idade: 35,
+  altura: 1.6,
+  peso: 55,
+  andando: false,
+  caminhouQuantosMetros: 0,
+  fazerAniversario: () => this.idade++,
+  andar: (metrosCaminhados) => {
+    this.andando = true
+    this.caminhouQuantosMetros += metrosCaminhados
+  },
+  parar: () => this.andando = false,
+  apresentacao: () => {
+    const anos = (this.idade === 1) ? 'ano' : 'anos'
+  
+    const metros = (this.caminhouQuantosMetros <= 1) ? 'metro' : 'metros'
+  
+    return `Olá, eu sou ${this.nome} ${this.sobrenome}, tenho ${this.idade} ${anos}, ${this.altura}, meu peso é ${this.peso} e, só hoje, eu já caminhei ${this.caminhouQuantosMetros} ${metros}!`
+  }
+}
+
+console.log(pessoa2.apresentacao())
 
 
 
